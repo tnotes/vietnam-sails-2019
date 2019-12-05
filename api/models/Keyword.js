@@ -1,5 +1,6 @@
 module.exports = {
   attributes: {
+
     userId: {type: 'string', required: true},
     key: {
       type: 'string',
@@ -13,9 +14,9 @@ module.exports = {
       type: 'number',
       defaultsTo: 1
     },
-    share: {
-      type: 'json',
-      defaultsTo: []
+    stock: {
+      type: 'number',
+      defaultsTo: 0
     }
   }
 

@@ -4,11 +4,10 @@ module.exports.models = {
   migrate: 'alter',
 
   primaryKey:'id',
-
   attributes: {
     createdAt: { type: 'number', autoCreatedAt: true, },
     updatedAt: { type: 'number', autoUpdatedAt: true, },
-    id: { type: 'number', autoIncrement: true,unique:true }
+    id: { type: 'string',unique:true }
   },
 
   dataEncryptionKeys: {

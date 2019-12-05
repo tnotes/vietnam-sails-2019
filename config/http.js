@@ -1,7 +1,7 @@
 module.exports.http = {
 
   middleware: {
-    // order: [
+     order: [
     //   'cookieParser',
     //   'session',
     //   'bodyParser',
@@ -10,7 +10,8 @@ module.exports.http = {
     //   'router',
     //   'www',
     //   'favicon',
-    // ],
+    'connect-history-api-fallback'
+     ],
 
     // bodyParser: (function _configureBodyParser(){
     //   var skipper = require('skipper');
