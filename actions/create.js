@@ -102,7 +102,7 @@ module.exports = function createRecord (req, res) {
               default: return res.serverError(err);
             }//•
           case 'UsageError': return res.badRequest(formatUsageError(err, req));
-          default: return res.serverError(err);
+          default: return res.serverError({error:err.raw});
         }
       }//-•
 

@@ -1,7 +1,10 @@
-module.exports.http = {
+var history = require('connect-history-api-fallback');
 
+module.exports.http = {
+ 
   middleware: {
-     order: [
+    
+ //    order: [
     //   'cookieParser',
     //   'session',
     //   'bodyParser',
@@ -10,15 +13,19 @@ module.exports.http = {
     //   'router',
     //   'www',
     //   'favicon',
-    'connect-history-api-fallback'
-     ],
+   //  'connectHistoryApiFallback',
+     
+   
+   //  ],
 
     // bodyParser: (function _configureBodyParser(){
     //   var skipper = require('skipper');
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(),
-
+   
+   // connectHistoryApiFallback: history({index: '/index.html'})
   },
+  
 
 };

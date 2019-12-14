@@ -5,7 +5,7 @@ module.exports.policies = {
   'entrance/*': true,
   'account/logout': true,
   'view-homepage-or-redirect': true,
-  'user':false
+  'user':true
   
 
 };

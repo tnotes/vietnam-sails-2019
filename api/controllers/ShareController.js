@@ -43,6 +43,7 @@ module.exports = {
 		return res.send(true)
 
 	},
+	
 	delete:async function(req,res){
 		let {
 			body:{
@@ -53,9 +54,10 @@ module.exports = {
 			}
 
 		} = req;
+
 		if(!(email && userId)) return res.send(404);
-		await Share.destroy({email_invite:email,userId});
-		await Share.destroy({email_from:email,id_invite:userId});
+		await Share.destroy({"email_invite": email,"userId": userId});
+		await Share.destroy({"email_from": email,"id_invite": userId});
 		return res.send(true);
 	},
 	'send-keyword':async function(req,res){

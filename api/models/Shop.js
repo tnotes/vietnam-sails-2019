@@ -4,7 +4,7 @@
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
-const shop = require('../../module/get-info-shop/main');
+const shop = require('../services/get-info-shop/main');
 module.exports = {
 
   attributes: {

@@ -7,7 +7,6 @@
   	},
   	email_invite:{
   		type:'string',
-      isEmail:true,
       required:true
   	},
 

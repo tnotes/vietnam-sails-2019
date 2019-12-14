@@ -7,7 +7,7 @@ module.exports.models = {
   attributes: {
     createdAt: { type: 'number', autoCreatedAt: true, },
     updatedAt: { type: 'number', autoUpdatedAt: true, },
-    id: { type: 'string',unique:true }
+    id: {unique:true }
   },
 
   dataEncryptionKeys: {

@@ -1,5 +1,5 @@
 module.exports.custom = {
-  baseUrl: 'http://localhost:1337',
+  baseUrl: 'http://localhost:8080',
 
   passwordResetTokenTTL: 24*60*60*1000,// 24 hours
   emailProofTokenTTL:    24*60*60*1000,// 24 hours

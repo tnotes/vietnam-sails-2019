@@ -3,8 +3,7 @@ var actionUtil = require('../actionUtil');
 var formatUsageError = require('../formatUsageError');
 
 
-module.exports = function findRecords (req, res) {
-
+module.exports = async function findRecords (req, res) {
   var parseBlueprintOptions = req.options.parseBlueprintOptions || req._sails.config.blueprints.parseBlueprintOptions;
 
   // Set the blueprint action for parseBlueprintOptions.
@@ -14,12 +13,20 @@ module.exports = function findRecords (req, res) {
   var Model = req._sails.models[queryOptions.using];
   
   queryOptions.criteria.where.userId = req.session.userId;
-  
-  if(queryOptions.criteria.omit) {
-    queryOptions.criteria.omit.push('userId');
+  delete queryOptions.criteria.where['get-count'];
+  if(req.query['get-count']) return res.send((await Model.count(queryOptions.criteria.where)).toString());
+
+  if(queryOptions.criteria.select){
+    queryOptions.criteria.select = queryOptions.criteria.select.filter(e=>e !== 'userId');
   }else{
-    queryOptions.criteria.omit = ['userId'];
+    if(queryOptions.criteria.omit) {
+      queryOptions.criteria.omit.push('userId');
+    }else{
+      queryOptions.criteria.omit = ['userId'];
+    }
   }
+  
+
   
   Model
   .find(queryOptions.criteria,queryOptions.populates ).meta(queryOptions.meta)
