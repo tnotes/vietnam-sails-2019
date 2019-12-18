@@ -296,7 +296,7 @@
   methods:{
     login:async function(){
       try{
-         let {data} = await axios.put('http://localhost/api/v1/entrance/login',{emailAddress:this.emailAddress,password:this.password});
+         let {data} = await axios.put('http://14.160.25.56/api/v1/entrance/login',{emailAddress:this.emailAddress,password:this.password});
          if(data === 'OK') return window.location.href = "/";
     
       }catch(e){
@@ -310,7 +310,7 @@
     },
     register:async function(){
       try{
-        let response = await axios.post('http://localhost/api/v1/entrance/signup',{fullName:this.fullName,emailAddress:this.emailAddress,password:this.password});
+        let response = await axios.post('http://14.160.25.56/api/v1/entrance/signup',{fullName:this.fullName,emailAddress:this.emailAddress,password:this.password});
          if(response.data === 'OK') return window.location.href = "/";
       }catch(e){
         let _ = this;
